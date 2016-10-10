@@ -1,0 +1,170 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.posts-index .posts-left {
+  background: #eee;
+  color: white;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  border-right: 1px solid #bbb;
+
+}
+
+.posts-index .posts-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.posts-index .posts-right .no-post-selected {
+  background: #eee;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+.posts-index .posts-right .no-post-selected h4 {
+  margin-top: 150px;
+  font-size: 2rem;
+  color: #999;
+}
+
+.posts-index .post-tile {
+  padding: 15px 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #bbb;
+  min-height: 64px;
+}
+
+.posts-index .post-tile .author-image img {
+  max-width: 64px;
+  float: left;
+}
+.posts-index .post-tile .post-tile-content {
+  margin-left: 70px;
+}
+
+.posts-index .posts-left .posts-left-search {
+  padding: 10px;
+}
+
+.posts-index .posts-left .posts-left-search input {
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
+  background: white;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+.posts-index .post-tile.active {
+  background-color: #ffa;
+}
+
+.posts-index .post-view {
+  margin: 10px ;
+}
+
+.posts-index .post-view .title-row {
+  min-height: 64px;
+}
+
+.posts-index .post-view .title-row .author-portrait{
+  width: 64px;
+  border-radius: 3px;
+  float: left;
+}
+.posts-index .post-view .title-row h1 {
+  margin-left: 70px;
+  margin-bottom: 5px;
+}
+
+.posts-index .post-view .actions {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.posts-index .post-view .actions button {
+  background: #009;
+  border: 1px solid #55f;
+  color: white;
+  font-size: 1rem;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.posts-index .post-view .actions button:hover {
+  background: #00f;
+}
+
+.posts-index .post-view .metadata-row {
+  color: #888;
+  margin-left: 70px;
+}
+
+.posts-index .post-view .metadata-row .date-field,
+.posts-index .post-view .metadata-row .author-name {
+  color: #333;
+}
+
+.posts-index .post-view .feature-image-row .feature-image {
+  max-width: 100%;
+}
+
+.posts-index .post-tile h3 {
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.posts-index .post-tile .created-at {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.posts-index .post-tile .author-name {
+  font-size: 0.8rem;
+  color: #000;
+}
+.posts-index .post-tile .post-tease {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* iPhone */
+/*@media (max-width: 767px) {
+ .posts-index .posts-left {
+    width: 100%;
+ }
+ .posts-index .posts-right {
+    display: none;
+ }
+}  
+*/
+/* iPad */
+/*@media (min-width: 768px) {*/
+  .posts-index .posts-left {
+    width: 370px;
+    float: left;
+  }
+  .posts-index .posts-right {
+    left: 371px;
+    width: calc(100%-370px);
+    right: 0;
+  }
+/*}    */
+
+.pull-right {
+  float: right;
+}
