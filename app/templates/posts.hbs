@@ -7,26 +7,11 @@
         placeholder='🔎 Search'}}
     </div>
     <div class="posts-left-content">
-    {{#each model as |post|}}
-      {{#link-to "posts.show" post.id classNames='post-tile'}}
-          <div class="author-image">
-            <img src={{post.authorPhotoUrl}} alt="">
-          </div>
-          <div class="post-tile-content">
-            <h3>{{post.title}}</h3>
-            <span class="author-name">
-              {{post.authorName}}
-            </span>
-            <span class="created-at pull-right">
-              {{moment-format post.createdAt "LL"}}
-            </span>
-            <div class="post-tease">
-              {{tease post.body chars=80}}...
-            </div>
-          </div>
-          
-      {{/link-to}}
-    {{/each}}
+      <div class="posts-left-content-pane">
+      {{#each model as |post|}}
+        {{post-tile model=post}}
+      {{/each}}
+      </div>
     </div>
   </div>
   <div class="posts-right">

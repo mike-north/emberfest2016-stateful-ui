@@ -7,9 +7,8 @@ export default Model.extend({
   title: attr('string'),
   authorName: attr('string'),
   authorPhotoUrl: attr('string'),
-
+  featuredImageUrl: attr('string'),
+  categoryName: attr('string'),
   createdAt: attr('date'),
   updatedAt: attr('date'),
-
-  featuredImageUrl: attr('string')
 });
