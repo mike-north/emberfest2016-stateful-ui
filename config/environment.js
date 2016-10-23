@@ -24,7 +24,9 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.DS.host = 'http://localhost:4000';
+        ENV.DS.host = 'https://mike-demo-blog-api.herokuapp.com';
+
+    // ENV.DS.host = 'http://localhost:4000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

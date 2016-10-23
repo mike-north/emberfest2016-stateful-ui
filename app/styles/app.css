@@ -81,6 +81,10 @@ html, body {
 
 /** POST-TILE **/
 
+.post-tile {
+  /*position: relative;*/
+}
+
 .post-tile h3 {
   font-weight: 500;
   white-space: nowrap;
@@ -88,6 +92,14 @@ html, body {
   overflow-x: hidden;
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.post-tile .comment-count {
+  float: right;
+  margin-right: -6px;
+  background: rgba(255,255,255, 0.8);
+  padding: 3px 10px;
+  border-radius: 10px;
 }
 
 .post-tile .created-at {
@@ -126,6 +138,20 @@ html, body {
   background-color: #ffa;
 }
 
+.post-tile a.active .comment-count {
+  background: #dd9;
+}
+
+.post-tile .draft-indicator {
+  color: #fff;
+  font-size: 0.75rem;
+  background: #900;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.post-tile .draft-indicator:before {
+  content: '⨉';
+}
 /** POST-FULL **/
 
 .post-full {
@@ -174,9 +200,53 @@ html, body {
   background: #00f;
 }
 
+
 .post-full .metadata-row {
   font-size: 0.8rem;
   margin-left: 110px;
+  margin-bottom: 20px;
+  height: 40px;
+  transition: all 0.3s;
+}
+
+.post-full .metadata-row.closed,
+.post-full .metadata-row.closed .metadata-item {
+  height: 0;
+}
+
+.post-full .metadata-row.closed .metadata-item .metadata-item-value,
+.post-full .metadata-row.closed .metadata-item .metadata-item-label {
+  color: white;
+}
+
+.post-full .metadata-row.closed:after {
+  line-height: 1rem;
+  width: 20px;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 0.5rem; 
+  background: #bbb;
+  content: 'details...';
+}
+
+.post-full .post-comment {
+  background: #eee;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.post-full .post-comment .delete-indicator:after {
+  content: '⨉';
+  float: right;
+  color: black;
+}
+
+.post-full .post-comment:hover .delete-indicator:after {
+  background: #d00;
+  color: white;
+  margin-right: -2px;
+  padding: 2px;
+  border-radius: 2px;
 }
 
 .post-full .metadata-row .metadata-item-label {
@@ -187,9 +257,17 @@ html, body {
   content: ':';
 }
 
+.post-full .reply-field {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #ddd;
+}
+
 .post-full .metadata-row .metadata-item-value {
   color: #333;
 }
+
+
 
 .post-full .feature-image-row .feature-image {
   max-width: 100%;

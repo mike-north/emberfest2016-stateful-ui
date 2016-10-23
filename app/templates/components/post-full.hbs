@@ -1,7 +1,9 @@
 <div class="title-row">
   <img src={{model.authorPhotoUrl}} alt={{authorName}} class="author-portrait">
   <h1 class='post-title'>{{titlecase model.title}}</h1>
-  <div class="metadata-row">
+  {{#if draft.metadataOpen}}
+  <div class="metadata-row"
+    onClick={{action 'toggleMetadata' false}}>
     <div class="metadata-item author">
       <span class="metadata-item-label">By</span>
       <span class="metadata-item-value">{{model.authorName}}</span>
@@ -23,6 +25,9 @@
     </div>  
     {{/if}}
   </div>
+  {{else}}
+  <div class="expand-metadata" onClick={{action 'toggleMetadata' true}}>details...</div>
+  {{/if}}
 </div>
 
 
@@ -38,13 +43,21 @@
 
 <hr>
 
-<div class="post-actions">
-  <button onClick={{action (mut isReplying true)}}>Reply</button>
-</div>
+{{#each model.comments as |comment|}}
+  <div class="post-comment">
+    {{comment.body}}
+    <span class="delete-indicator" onClick={{action 'deleteComment' comment}}></span>
+  </div>
+{{else}}
+  <p class="no-comments">
+    No comments yet
+  </p>
+{{/each}}
+{{textarea value=draft.reply class='reply-field'}}
 
-{{#if isReplying}}
-
 <div class="post-actions">
-  <button onClick={{action (mut isReplying false)}}>Cancel</button>
+  <button onclick={{action 'saveComment'}}>Reply</button>
+  {{#unless (eq draft.reply '')}}
+    <button onclick={{action 'clearDraft'}}>Cancel</button>
+  {{/unless}}
 </div>
-{{/if}}

@@ -3,6 +3,8 @@
     <div class="posts-left-search">
       {{input
         class='posts-search-field'
+        value=query
+        keyUp=(action 'scheduleListRefresh')
         type='search'
         placeholder='🔎 Search'}}
     </div>
