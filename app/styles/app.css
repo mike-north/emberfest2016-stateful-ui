@@ -229,25 +229,6 @@ html, body {
   content: 'details...';
 }
 
-.post-full .post-comment {
-  background: #eee;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-.post-full .post-comment .delete-indicator:after {
-  content: '⨉';
-  float: right;
-  color: black;
-}
-
-.post-full .post-comment:hover .delete-indicator:after {
-  background: #d00;
-  color: white;
-  margin-right: -2px;
-  padding: 2px;
-  border-radius: 2px;
-}
 
 .post-full .metadata-row .metadata-item-label {
   color: #aaa;
@@ -267,8 +248,39 @@ html, body {
   color: #333;
 }
 
-
-
 .post-full .feature-image-row .feature-image {
   max-width: 100%;
+}
+
+/** POST-COMMENT **/
+.post-comment {
+  background: #eee;
+  padding: 10px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.post-comment p {
+  display: inline-block;
+  width: calc(100% - 40px);
+}
+
+.post-comment .delete-indicator:after {
+  content: '⨉';
+  float: right;
+  color: black;
+}
+
+.post-comment:hover .delete-indicator:after {
+  color: red;
+}
+
+.post-comment .posted-at {
+  font-size: 0.7rem;
+  color: #666;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  text-align: right;
+  width: 300px;
 }

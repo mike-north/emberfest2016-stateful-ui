@@ -1,11 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { Route } = Ember;
+
+export default Route.extend({
   model({ id }) {
-    return this.store.findRecord('post', id).then((post) => {
-      return post.get('comments').then(() => {
-        return post;
-      });
-    });
+    return this.store.peekRecord('post', id) ||
+      this.store.findRecord('post', id);
   }
 });

@@ -17,7 +17,11 @@ test('it renders', function(assert) {
     body: 'hello this is my body'
   });
 
-  this.render(hbs`{{post-full model=model}}`);
+  this.set('draft', {
+    metadataOpen: true
+  });
+
+  this.render(hbs`{{post-full model=model draft=draft}}`);
 
   assert.equal(this.$('.post-title').text().trim(),
     'This is my title');

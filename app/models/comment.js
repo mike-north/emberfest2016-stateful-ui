@@ -6,5 +6,5 @@ export default Model.extend({
   post: belongsTo('post'),
   body: attr('string'),
   createdAt: attr('date'),
-  updatedAt: attr('date')
+  updatedAt: attr('string')
 });

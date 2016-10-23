@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 const { Model, attr, hasMany } = DS;
 
-const Post = Model.extend({
+export default Model.extend({
   body: attr('string'),
   title: attr('string'),
   authorName: attr('string'),
@@ -11,9 +11,5 @@ const Post = Model.extend({
   categoryName: attr('string'),
   createdAt: attr('date'),
   updatedAt: attr('date'),
-  comments: hasMany('comments', {async: true})
+  comments: hasMany('comments')
 });
-
-export default Post;
-
-

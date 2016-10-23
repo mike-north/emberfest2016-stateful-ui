@@ -13,11 +13,6 @@
     <span class="created-at pull-right">
       {{moment-format model.createdAt "LL"}}
     </span>
-    {{#unless (eq draft.reply '')}}
-      <span class="draft-indicator" onClick={{action 'draftIndicatorClicked'}}>
-        DRAFT
-      </span>
-    {{/unless}}
     <div class="post-tease">
       {{tease model.body chars=80}}...
     </div>
