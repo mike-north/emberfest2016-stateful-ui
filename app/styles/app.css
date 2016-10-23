@@ -150,7 +150,6 @@ html, body {
   border-radius: 3px;
 }
 .post-tile .draft-indicator:before {
-  content: '⨉';
 }
 /** POST-FULL **/
 

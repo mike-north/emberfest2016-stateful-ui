@@ -4,6 +4,8 @@
       {{input
         class='posts-search-field'
         type='search'
+        value=search
+        keyUp=(action 'queuePageRefresh')
         placeholder='🔎 Search'}}
     </div>
     <div class="posts-left-content">
