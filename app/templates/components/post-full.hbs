@@ -1,7 +1,9 @@
 <div class="title-row">
   <img src={{model.authorPhotoUrl}} alt={{authorName}} class="author-portrait">
   <h1 class='post-title'>{{titlecase model.title}}</h1>
-  <div class="metadata-row">
+  
+  {{#if postInfo.detailsOpen}}
+  <div onClick={{action (mut postInfo.detailsOpen) false}} class="metadata-row">
     <div class="metadata-item author">
       <span class="metadata-item-label">By</span>
       <span class="metadata-item-value">{{model.authorName}}</span>
@@ -23,6 +25,12 @@
     </div>  
     {{/if}}
   </div>
+  {{else}}
+    <span onClick={{action (mut postInfo.detailsOpen) true}}>
+      details...
+    </span>
+  {{/if}}
+
 </div>
 
 
